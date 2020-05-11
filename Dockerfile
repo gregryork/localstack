@@ -39,7 +39,7 @@ ADD bin/docker-entrypoint.sh /usr/local/bin/
 EXPOSE 4566-4597 8080
 
 # define command at startup
-ENTRYPOINT ["docker-entrypoint.sh"]
+ENTRYPOINT ["sh", "-c", "cd /opt/code/localstack; docker-entrypoint.sh"]
 
 # expose default environment (required for aws-cli to work)
 ENV MAVEN_CONFIG=/opt/code/localstack \
